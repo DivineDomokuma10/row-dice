@@ -5,7 +5,7 @@ const stopRowAndEvalWin = (diceCon,title,diceArr) => {
     setTimeout(() => Array.from(rowingDices).forEach(rowingDice => {
         rowingDice.style.animationName = '';
         evalWin(title,diceArr,diceCon)
-    }), 2000);
+    }), 1000);
 
 }
 
@@ -14,6 +14,9 @@ const evalWin = (t,diceArr,diceCon) => {
     const random = ()=> Math.floor( Math.random() * (diceArr.length - 1))
     let ply1 = random();
     let ply2 = random();
+
+    dice[0].src = diceArr[ply1];
+    dice[1].src = diceArr[ply2];
 
     if (ply1 > ply2) {
         t.textContent = 'Player 1 wins!'
@@ -24,9 +27,6 @@ const evalWin = (t,diceArr,diceCon) => {
     else{
         t.textContent = "It's a tie!"
     }
-    
-    dice[0].src = diceArr[ply1];
-    dice[1].src = diceArr[ply2];
 }
 
 export default stopRowAndEvalWin

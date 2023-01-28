@@ -27,7 +27,7 @@ h1{
     flex-direction: column;
 }
 .first-dice{
-    animation-duration: .3s;
+    animation-duration: .5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
