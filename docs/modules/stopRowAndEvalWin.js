@@ -3,12 +3,12 @@
 const stopRowAndEvalWin = (diceCon,title,diceArr) => {
     const rowingDices = diceCon.children;
     setTimeout(() => Array.from(rowingDices).forEach(rowingDice => {
-        evalWin(title,diceArr,diceCon)
+        evalWin(title,diceArr,diceCon,rowingDice)
     }), 1000);
 
 }
 
-const evalWin = (t,diceArr,diceCon) => {
+const evalWin = (t,diceArr,diceCon,rowingDice) => {
     const dice = diceCon.children;
     const random = ()=> Math.floor( Math.random() * (diceArr.length - 1))
     let ply1 = random();
